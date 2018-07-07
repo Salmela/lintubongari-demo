@@ -1,19 +1,12 @@
-import {Observation} from './observation'
+import {Observation} from './observation';
 
 export class App {
 	heading = "Lintu Bongari v2.0";
 	observations: Observation[] = [];
-	observationWhere = "";
-	observationBird = "";
 	hasFocus = true;
 
-	addObservation() {
-		if (this.observationWhere && this.observationBird) {
-			this.observations.push(new Observation(this.observationWhere, this.observationBird));
-			this.observationWhere = "";
-			this.observationBird = "";
-			this.hasFocus = true;
-		}
+	addObservation(observation) {
+		this.observations.push(observation);
 	}
 
 	removeObservation(observation: Observation) {

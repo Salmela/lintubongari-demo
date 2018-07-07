@@ -1,0 +1,7 @@
+<template>
+	<form submit.trigger="addObservation()">
+		<input type="text" placeholder="lintu" value.bind="observationBird" focus.bind="hasFocus" />
+		<input type="text" placeholder="sijainti" value.bind="observationWhere" />
+		<input type="submit" value="Lisää havainto" />
+	</form>
+</template>

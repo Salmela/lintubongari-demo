@@ -1,10 +1,7 @@
 <template>
+	<require from="./observation-form"></require>
 	<h1>${heading}</h1>
-	<form submit.trigger="addObservation()">
-		<input type="text" placeholder="lintu" value.bind="observationBird" focus.bind="hasFocus" />
-		<input type="text" placeholder="sijainti" value.bind="observationWhere" />
-		<input type="submit" value="Lisää havainto" />
-	</form>
+	<observation-form></observation-form>
 
 	<h2>Havainnot</h2>
 	<table>

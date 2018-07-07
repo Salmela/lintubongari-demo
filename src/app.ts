@@ -1,12 +1,10 @@
 import {Observation} from './observation'
 
 export class App {
-	constructor() {
-		this.heading = "Lintu Bongari v2.0";
-		this.observations = [];
-		this.observationWhere = "";
-		this.observationBird = "";
-	}
+	heading = "Lintu Bongari v2.0";
+	observations: Observation[] = [];
+	observationWhere = "";
+	observationBird = "";
 
 	addObservation() {
 		if (this.observationWhere && this.observationBird) {
@@ -16,7 +14,7 @@ export class App {
 		}
 	}
 
-	removeObservation(observation) {
+	removeObservation(observation: Observation) {
 		let index = this.observations.indexOf(observation);
 		if (index != -1) {
 			this.observations.splice(index, 1);

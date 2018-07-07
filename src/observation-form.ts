@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {Observation} from './observation';
+import {Observation} from './models/observation';
 import {ObservationService} from './backend/observation-service';
 
 @inject(ObservationService)

@@ -1,4 +1,4 @@
-import {Observation} from '../observation';
+import {Observation} from '../models/observation';
 
 export class ObservationService {
 	constructor() {

@@ -21,5 +21,9 @@ export class ObservationList {
 			this.searchQuery = "";
 		}
 	}
+
+	removeObservation(observation: Observation) {
+		this.backend.remove(observation);
+	}
 }
 

@@ -10,6 +10,22 @@ h1, h2, h3 {
   font-weight: normal;
 }
 
+.clearfix {
+  clear: both;
+}
+
+.button {
+  border: none;
+  border-radius: 2px;
+  background: #17a2b8;
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.button:hover {
+  background: #138496;
+}
+
 #wrap {
   width: 60%;
   max-width: 1024px;
@@ -61,11 +77,6 @@ h1:before {
 
 #observation-list #search-item {
   float: right;
-  border: none;
-  border-radius: 2px;
-  background: #17a2b8;
-  color: #fff;
-  padding: 6px 12px;
 }
 #observation-list #search-item.active {
   box-shadow: inset 0 2px 6px #107281;
@@ -81,6 +92,7 @@ h1:before {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  margin-top: 6px;
 }
 
 #observation-list thead {
@@ -107,6 +119,15 @@ h1:before {
   text-align: center;
   padding: 24px;
   color: rgba(1, 1, 1, 0.8);
+}
+
+#observation-list .delete-button {
+  background: #dc3545;
+  float: right;
+}
+
+#observation-list .delete-button:hover {
+  background: #c82333;
 }
 
 #observation-search {

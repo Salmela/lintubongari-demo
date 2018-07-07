@@ -4,27 +4,30 @@
 
 	<div id="observation-list">
 	<h2>Havainnot</h2>
-	<div id="search-item" class.bind="showSearch ? 'active' : ''">
+	<div id="search-item" class="button" class.bind="showSearch ? 'active' : ''">
 		<input type="checkbox" checked.bind="showSearch" id="show-search" />
 		<label for="show-search">Hae...</label>
 	</div>
 	<div if.bind="showSearch">
 		<observation-search search-event.call="search(query)" close-event.call="showSearch = false"></observation-search>
 	</div>
+	<div class="clearfix"></div>
 	<table>
 	<thead>
 		<tr>
 			<th class="width-30">Lintu</th>
 			<th>Sijainti</th>
+			<th style="width: 5em;"></th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr if.bind="backend.observations.length == 0" class="placeholder">
 			<td colspan="2">Havaintoja ei ole vielä tehty</td>
 		</tr>
-			<tr repeat.for="observation of backend.observations | observationFilter:searchQuery">
+		<tr repeat.for="observation of backend.observations | observationFilter:searchQuery">
 			<td>${observation.bird}</td>
 			<td>${observation.where}</td>
+			<td><button click.trigger="removeObservation(observation)" class="button delete-button">Poista</button></td>
 		</tr>
 	</tbody>
 	</table>

@@ -5,6 +5,10 @@ html, body {
   user-select: none;
 }
 
+a {
+  cursor: pointer;
+}
+
 h1, h2, h3 {
   font-family: "Alegreya Sans", sans, Arial;
   font-weight: normal;
@@ -106,6 +110,14 @@ h1:before {
   color: rgba(1, 1, 1, 0.8);
 }
 
+#observation-list tr {
+  opacity: 0.85;
+}
+
+#observation-list tr:hover {
+  opacity: 1;
+}
+
 #observation-list td {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -121,13 +133,14 @@ h1:before {
   color: rgba(1, 1, 1, 0.8);
 }
 
-#observation-list .delete-button {
-  background: #dc3545;
+#observation-list .delete-link {
+  color: #dc3545;
   float: right;
 }
 
-#observation-list .delete-button:hover {
-  background: #c82333;
+#observation-list .delete-link:hover {
+  color: #c82333;
+  text-decoration: underline;
 }
 
 #observation-search {

@@ -27,7 +27,7 @@
 		<tr repeat.for="observation of backend.observations | observationFilter:searchQuery">
 			<td>${observation.bird}</td>
 			<td>${observation.where}</td>
-			<td><button click.trigger="removeObservation(observation)" class="button delete-button">Poista</button></td>
+			<td><a click.trigger="removeObservation(observation)" class="delete-link">Poista</a></td>
 		</tr>
 	</tbody>
 	</table>

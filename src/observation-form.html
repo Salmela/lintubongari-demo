@@ -1,5 +1,5 @@
 <template>
-	<form submit.trigger="addObservation()">
+	<form submit.trigger="addObservation()" id="observation-form">
 		<input type="text" placeholder="lintu" value.bind="bird" focus.bind="hasFocus" />
 		<input type="text" placeholder="sijainti" value.bind="where" />
 		<input type="submit" value="Luo" />

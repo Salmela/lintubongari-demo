@@ -1,4 +1,4 @@
 export class Observation {
-	constructor(public where: string, public bird: string) {
+	constructor(public bird: string, public where: string) {
 	}
 }

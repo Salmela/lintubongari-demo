@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: sans, Arial;
+  user-select: none;
 }
 
 h1, h2, h3 {
@@ -56,19 +57,33 @@ h2 {
 #observation-list table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 #observation-list thead {
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
+#observation-list th {
+  font-family: "Alegreya Sans", sans, Arial;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: rgba(1, 1, 1, 0.8);
+}
+
+#observation-list td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #observation-list tbody tr:nth-child(even) {
-  background: rgba(1, 1, 1, 0.1);
+  background: rgba(1, 1, 1, 0.05);
 }
 
 #observation-list .placeholder td {
   text-align: center;
   padding: 24px;
+  color: rgba(1, 1, 1, 0.8);
 }
 
 .width-30 {

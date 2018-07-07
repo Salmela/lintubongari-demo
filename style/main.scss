@@ -1,11 +1,14 @@
+$header_font: "Alegreya Sans", sans, Arial;
+
 html, body {
 	margin: 0;
 	padding: 0;
 	font-family: sans, Arial;
+	user-select: none;
 }
 
 h1, h2, h3 {
-	font-family: "Alegreya Sans", sans, Arial;
+	font-family: $header_font;
 	font-weight: normal;
 }
 
@@ -57,21 +60,32 @@ h2 {
 		width: 100%;
 		border-collapse: collapse;
 		table-layout: fixed;
+	}
+
+	thead {
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+	}
+
+	th {
+		font-family: $header_font;
+		text-transform: uppercase;
+		font-weight: normal;
+		color: rgba(1, 1, 1, 0.8);
+	}
+
+	td {
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 
-	#observation-list thead {
-		border-bottom: 1px solid rgba(0,0,0,0.2);
-	}
-
 	tbody tr:nth-child(even) {
-		background: rgba(1, 1, 1, 0.1);
+		background: rgba(1, 1, 1, 0.05);
 	}
 
 	.placeholder td {
 		text-align: center;
 		padding: 24px;
+		color: rgba(1, 1, 1, 0.8);
 	}
 }
 

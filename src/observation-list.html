@@ -9,6 +9,9 @@
 		</tr>
 	</thead>
 	<tbody>
+		<tr if.bind="backend.observations.length == 0" class="placeholder">
+			<td colspan="2">Havaintoja ei ole vielä tehty</td>
+		</tr>
 		<tr repeat.for="observation of backend.observations">
 			<td>${observation.bird}</td>
 			<td>${observation.where}</td>

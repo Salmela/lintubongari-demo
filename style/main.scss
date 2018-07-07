@@ -1,0 +1,28 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: sans, Arial;
+}
+
+h1, h2, h3 {
+	font-family: "Alegreya Sans", sans, Arial;
+	font-weight: normal;
+}
+
+#show-add {
+	display: none;
+}
+
+#show-add + label:before {
+	background-image: inline-image('opener.svg');
+	width: 16px;
+	height: 16px;
+	content: "";
+	display: inline-block;
+	transition: transform 0.2s;
+	margin: 0 4px;
+}
+
+#show-add:checked + label:before {
+	transform: rotate(90deg);
+}

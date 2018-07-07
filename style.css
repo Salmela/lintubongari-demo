@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans, Arial;
+}
+
+h1, h2, h3 {
+  font-family: "Alegreya Sans", sans, Arial;
+  font-weight: normal;
+}
+
+#show-add {
+  display: none;
+}
+
+#show-add + label:before {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE2IDE2IiBoZWlnaHQ9IjE2IiB3aWR0aD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibSAxNiw4IC0xMiw2LjkyODIgMCwtMTMuODU2NCB6IiBzdHlsZT0iY29sb3I6IzAwMDAwMDtmaWxsOiMyZTM0MzYiIC8+PC9zdmc+");
+
+  width: 16px;
+  height: 16px;
+  content: "";
+  display: inline-block;
+  transition: transform 0.2s;
+  margin: 0 4px;
+}
+
+#show-add:checked + label:before {
+  transform: rotate(90deg);
+}

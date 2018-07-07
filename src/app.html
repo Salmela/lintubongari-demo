@@ -1,7 +1,12 @@
 <template>
 	<require from="./observation-form"></require>
 	<require from="./observation-list"></require>
+
 	<h1>${heading}</h1>
+	<input type="checkbox" checked.bind="showAdd" id="show-add" />
+	<label for="show-add">Lisää havainto</label>
+	<div if.bind="showAdd">
 	<observation-form></observation-form>
+	</div>
 	<observation-list></observation-list>
 </template>

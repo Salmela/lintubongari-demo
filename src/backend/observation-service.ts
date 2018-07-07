@@ -1,9 +1,7 @@
 import {Observation} from '../models/observation';
 
 export class ObservationService {
-	constructor() {
-		this.observations = [];
-	}
+	observations: Observation[] = [];
 
 	add(observation: Observation) {
 		this.observations.push(observation);

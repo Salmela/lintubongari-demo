@@ -1,6 +1,16 @@
 <template>
-	<h2>Havainnot</h2>
+	<require from="./observation-search"></require>
+	<require from="./observation-filter"></require>
+
 	<div id="observation-list">
+	<h2>Havainnot</h2>
+	<div id="search-item">
+		<input type="checkbox" checked.bind="showSearch" id="show-search" />
+		<label for="show-search">Hae...</label>
+	</div>
+	<div if.bind="showSearch">
+		<observation-search search-event.call="search(query)" close-event.call="showSearch = false"></observation-search>
+	</div>
 	<table>
 	<thead>
 		<tr>
@@ -12,7 +22,7 @@
 		<tr if.bind="backend.observations.length == 0" class="placeholder">
 			<td colspan="2">Havaintoja ei ole vielä tehty</td>
 		</tr>
-		<tr repeat.for="observation of backend.observations">
+			<tr repeat.for="observation of backend.observations | observationFilter:searchQuery">
 			<td>${observation.bird}</td>
 			<td>${observation.where}</td>
 		</tr>

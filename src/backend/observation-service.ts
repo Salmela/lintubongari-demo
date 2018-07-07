@@ -5,11 +5,11 @@ export class ObservationService {
 		this.observations = [];
 	}
 
-	add(observation) {
+	add(observation: Observation) {
 		this.observations.push(observation);
 	}
 
-	remove(observation) {
+	remove(observation: Observation) {
 		let index = this.observations.indexOf(observation);
 		if (index != -1) {
 			this.observations.splice(index, 1);

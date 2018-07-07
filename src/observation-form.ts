@@ -8,7 +8,7 @@ export class ObservationForm {
 	where = "";
 	hasFocus = true;
 
-	constructor(private observationService: ObservationService) {
+	constructor(private backend: ObservationService) {
 	}
 
 	addObservation() {

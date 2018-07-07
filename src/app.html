@@ -1,7 +1,7 @@
 <template>
 	<h1>${heading}</h1>
 	<form submit.trigger="addObservation()">
-		<input type="text" value.bind="observationBird" />
+		<input type="text" value.bind="observationBird" focus.bind="hasFocus" />
 		<input type="text" value.bind="observationWhere" />
 		<input type="submit" value="Lisää havainto" />
 	</form>

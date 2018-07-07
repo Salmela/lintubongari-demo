@@ -5,12 +5,14 @@ export class App {
 	observations: Observation[] = [];
 	observationWhere = "";
 	observationBird = "";
+	hasFocus = true;
 
 	addObservation() {
 		if (this.observationWhere && this.observationBird) {
 			this.observations.push(new Observation(this.observationWhere, this.observationBird));
 			this.observationWhere = "";
 			this.observationBird = "";
+			this.hasFocus = true;
 		}
 	}
 

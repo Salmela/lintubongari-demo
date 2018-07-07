@@ -1,21 +1,7 @@
 <template>
 	<require from="./observation-form"></require>
+	<require from="./observation-list"></require>
 	<h1>${heading}</h1>
 	<observation-form></observation-form>
-
-	<h2>Havainnot</h2>
-	<table>
-	<thead>
-		<tr>
-			<th>Lintu</th>
-			<th>Sijainti</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr repeat.for="observation of observationService.observations">
-			<td>${observation.bird}</td>
-			<td>${observation.where}</td>
-		</tr>
-	</tbody>
-	</table>
+	<observation-list></observation-list>
 </template>

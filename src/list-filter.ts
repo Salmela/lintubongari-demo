@@ -1,12 +1,6 @@
 export class ObservationFilterValueConverter {
 	toView(array: Observation[], query: string) {
-		let filtered: Observation[] = [];
-		for (let observation of array) {
-			if (this.filter(observation, query)) {
-				filtered.push(observation);
-			}
-		}
-		return filtered;
+		return array.filter(observation => this.filter(observation, query));
 	}
 
 	filter(observation: Observation, query: string) {

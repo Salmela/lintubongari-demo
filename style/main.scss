@@ -87,6 +87,12 @@ h1:before {
 
 #observation-form {
 	margin: 16px;
+
+	entry input {
+		padding: 5px;
+		border: 1px solid #bbb;
+		border-radius: 2px;
+	}
 }
 
 #observation-list {
@@ -147,6 +153,7 @@ h1:before {
 	td {
 		overflow: hidden;
 		text-overflow: ellipsis;
+		padding: 4px;
 	}
 
 	tbody tr:nth-child(even) {

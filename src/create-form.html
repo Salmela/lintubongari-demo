@@ -1,7 +1,8 @@
 <template>
+	<require from="./entry"></require>
 	<form submit.trigger="addObservation()" id="observation-form">
-		<input type="text" placeholder="lintu" value.bind="bird" focus.bind="hasFocus" />
-		<input type="text" placeholder="sijainti" value.bind="where" />
+		<entry placeholder="lintu" value.two-way="bird" focus.bind="hasFocus"></entry>
+		<entry placeholder="sijainti" value.two-way="where"></entry>
 		<input type="submit" class="button" value="Luo" />
 	</form>
 </template>

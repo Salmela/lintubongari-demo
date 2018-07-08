@@ -4,9 +4,9 @@
 
 	<div id="observation-list">
 	<h2>Havainnot</h2>
-	<div id="search-item" class="button" class.bind="showSearch ? 'active' : ''">
+	<div id="search-item">
 		<input type="checkbox" checked.bind="showSearch" id="show-search" />
-		<label for="show-search">Hae...</label>
+		<label for="show-search" class="button" class.bind="showSearch ? 'active' : ''">Hae...</label>
 	</div>
 	<div if.bind="showSearch">
 		<observation-search search-event.call="search(query)" close-event.call="showSearch = false"></observation-search>

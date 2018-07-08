@@ -36,7 +36,7 @@ $search_item_vertical_pad: 6px;
 }
 
 #wrap {
-	width: 60%;
+	width: 70%;
 	min-width: 40em;
 	max-width: 80em;
 	padding: 24px;
@@ -93,7 +93,7 @@ h1:before {
 		float: right;
 	}
 
-	#search-item.active {
+	#search-item .button.active {
 		box-shadow: inset 0 2px 6px mix($button_color, black, 70%);
 		padding: $search_item_vertical_pad + 1 12px $search_item_vertical_pad - 1;
 	}

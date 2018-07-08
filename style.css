@@ -81,10 +81,44 @@ h1:before {
   margin: 16px;
 }
 
-#create-form entry input {
+.entry {
+  position: relative;
+  display: inline-block;
+}
+
+.entry input {
   padding: 5px;
   border: 1px solid #bbb;
   border-radius: 2px;
+}
+
+.entry .recomendations {
+  display: none;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  background: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  /* ugly but works with js */
+  position: absolute;
+  left: 0;
+  top: 1.5em;
+}
+
+.entry .recomendations li {
+  padding: 4px;
+  cursor: default;
+}
+
+.entry .recomendations li:hover {
+  background: #4a90d9;
+  color: #fff;
+}
+
+.show {
+  display: initial !important;
 }
 
 #observation-list {

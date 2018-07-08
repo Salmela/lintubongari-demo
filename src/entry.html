@@ -1,3 +1,8 @@
 <template>
-	<input type="text" placeholder.bind="placeholder" value.bind="value" />
+	<div class="entry">
+	<input type="text" placeholder.bind="placeholder" value.bind="value" focus.trigger="focus()" blur.trigger="blur()" ref="input" autocomplete="off" autocorrect="off" spellcheck="false" />
+	<ul class="recomendations" css.bind="menuStyle">
+		<li repeat.for="recomendation of menu">${recomendation}</li>
+	</ul>
+	</div>
 </template>

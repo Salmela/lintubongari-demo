@@ -77,11 +77,11 @@ h1:before {
   transform: rotate(90deg);
 }
 
-#observation-form {
+#create-form {
   margin: 16px;
 }
 
-#observation-form entry input {
+#create-form entry input {
   padding: 5px;
   border: 1px solid #bbb;
   border-radius: 2px;

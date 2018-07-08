@@ -100,19 +100,23 @@ h1:before {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 
   /* ugly but works with js */
   position: absolute;
   left: 0;
   top: 1.5em;
+  z-index: 100;
 }
 
-.entry .recomendations li {
+.entry .recomendations a {
   padding: 4px;
   cursor: default;
+  display: block;
 }
 
-.entry .recomendations li:hover {
+.entry .recomendations a.focus,
+.entry .recomendations a:hover {
   background: #4a90d9;
   color: #fff;
 }

@@ -2,7 +2,7 @@
 	<div class="entry">
 	<input type="text" placeholder.bind="placeholder" value.bind="value" focus.trigger="focus()" blur.trigger="blur()" ref="input" autocomplete="off" autocorrect="off" spellcheck="false" />
 	<ul class="recomendations" css.bind="menuStyle">
-		<li repeat.for="recomendation of menu">${recomendation}</li>
+		<li repeat.for="recomendation of menu"><a>${recomendation}</a></li>
 	</ul>
 	</div>
 </template>

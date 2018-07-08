@@ -1,14 +1,15 @@
-import {inject} from 'aurelia-framework';
-import {Observation} from './models/observation';
-import {ObservationService} from './backend/observation-service';
+import {inject} from "aurelia-framework";
+import {Observation} from "./models/observation";
+import {ObservationService} from "./backend/observation-service";
+import {BirdRecomender, PlaceRecomender} from "./entry-recomenders";
 
-@inject(ObservationService)
+@inject(ObservationService, BirdRecomender, PlaceRecomender)
 export class ObservationForm {
 	bird = "";
 	where = "";
 	hasFocus = true;
 
-	constructor(private backend: ObservationService) {
+	constructor(private backend: ObservationService, private birdRecomender, private placeRecomender) {
 	}
 
 	addObservation() {

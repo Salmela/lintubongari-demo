@@ -12,7 +12,6 @@ export class ObservationList {
 	}
 
 	search(query) {
-		console.info(query);
 		this.searchQuery = query;
 	}
 

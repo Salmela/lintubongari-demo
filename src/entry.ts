@@ -16,22 +16,12 @@ export class Entry {
 		return this.recomendationEngine.filter(this.value);
 	}
 
-	focus() {
-		// show the menu
-		let newStyle = SHOW_MENU_CSS;
-
-		// the input size could be browser dependent so we set them here
-		newStyle += `top: ${this.input.offsetHeight - 1}px;`;
-		newStyle += `min-width: ${this.input.offsetWidth - 1}px;`;
-		this.menuStyle = newStyle;
+	focusHandler() {
+		this.focus();
 		this.setSelected(0);
 	}
 
-	blur() {
-		this.menuStyle = "";
-	}
-
-	blurEvent() {
+	blurHandler() {
 		this.blur();
 	}
 
@@ -43,10 +33,20 @@ export class Entry {
 	keyPress(event) {
 		let keyType = "";
 		if (event.key === "ArrowUp" || event.keyCode == 38) {
-			this.changeSelected(-1);
+			if (this.hasFocus()) {
+				this.changeSelected(-1);
+			} else {
+				this.focus();
+				this.setSelected(-1);
+			}
 
 		} else  if (event.key === "ArrowDown" || event.keyCode == 40) {
-			this.changeSelected(+1);
+			if (this.hasFocus()) {
+				this.changeSelected(+1);
+			} else {
+				this.focus();
+				this.setSelected(0);
+			}
 
 		} else if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
 			this.disableSelection();
@@ -56,6 +56,24 @@ export class Entry {
 			this.blur();
 		}
 		return true;
+	}
+
+	private hasFocus() {
+		return !!this.menuStyle;
+	}
+
+	private focus() {
+		// show the menu
+		let newStyle = SHOW_MENU_CSS;
+
+		// the input size could be browser dependent so we set them here
+		newStyle += `top: ${this.input.offsetHeight - 1}px;`;
+		newStyle += `min-width: ${this.input.offsetWidth - 1}px;`;
+		this.menuStyle = newStyle;
+	}
+
+	private blur() {
+		this.menuStyle = "";
 	}
 
 	private changeSelected(ammount: int) {

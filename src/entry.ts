@@ -1,4 +1,4 @@
-import {bindable} from "aurelia-framework";
+import {bindable, computedFrom} from "aurelia-framework";
 
 const SHOW_MENU_CSS = "display: initial;";
 
@@ -12,8 +12,15 @@ export class Entry {
 
 	selected = 0;
 
+	overflow = false;
+	isEmpty = false;
+
+	@computedFrom('value')
 	get menu() {
-		return this.recomendationEngine.filter(this.value);
+		let result = this.recomendationEngine.filter(this.value);
+		this.overflow = (result.length > 10);
+		this.isEmpty = (result.length == 0);
+		return result.slice(0, 10);
 	}
 
 	focusHandler() {
@@ -58,6 +65,12 @@ export class Entry {
 		return true;
 	}
 
+	disableSelection() {
+		if (this.selected === undefined) return;
+		this.getSelectedMenuItem().classList.remove("focus");
+		this.selected = undefined;
+	}
+
 	private hasFocus() {
 		return !!this.menuStyle;
 	}
@@ -81,26 +94,25 @@ export class Entry {
 		this.setSelected(oldSelected + ammount);
 	}
 
-	private disableSelection() {
-		if (this.selected === undefined) return;
-		this.getSelectedMenuItem().classList.remove("focus");
-		this.selected = undefined;
-	}
-
 	private setSelected(index: int) {
 		this.disableSelection();
-		if (this.menu) {
-			this.selected = this.wrapSelectionIndex(index);
-			this.getSelectedMenuItem().classList.add("focus");
+		if (this.menu.length == 0) {
+			this.selected = undefined;
+			return;
 		}
+		this.selected = this.wrapSelectionIndex(index);
+		this.getSelectedMenuItem().classList.add("focus");
 	}
 
 	private getSelectedMenuItem() {
+		if (this.selected === undefined) return null;
 		return this.menuElement.children[this.selected].children[0];
 	}
 
 	private wrapSelectionIndex(index: int) {
-		return (index + this.menu.length) % this.menu.length;
+		let length = this.menu.length;
+		if (length == 0) return undefined;
+		return (index + this.menu.length) % length;
 	}
 }
 

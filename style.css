@@ -109,7 +109,8 @@ h1:before {
   z-index: 100;
 }
 
-.entry .recomendations a {
+.entry .recomendations a,
+.entry .recomendations .tail-item {
   padding: 4px;
   cursor: default;
   display: block;
@@ -119,6 +120,11 @@ h1:before {
 .entry .recomendations a:hover {
   background: #4a90d9;
   color: #fff;
+}
+
+.entry .recomendations .tail-item {
+  text-align: center;
+  opacity: 0.5;
 }
 
 .show {

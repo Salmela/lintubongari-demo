@@ -3,6 +3,8 @@
 	<input type="text" placeholder.bind="placeholder" value.bind="value" focus.trigger="focusHandler()" blur.trigger="blurHandler()" keydown.trigger="keyPress($event)" ref="input" autocomplete="off" autocorrect="off" spellcheck="false" />
 	<ul class="recomendations" css.bind="menuStyle" mouseenter.trigger="disableSelection()" ref="menuElement">
 		<li repeat.for="recomendation of menu"><a mousedown.delegate="select($event)">${recomendation}</a></li>
+		<li if.bind="isEmpty" class="tail-item">Tuntematon arvo</li>
+		<li if.bind="overflow" class="tail-item">...</li>
 	</ul>
 	</div>
 </template>

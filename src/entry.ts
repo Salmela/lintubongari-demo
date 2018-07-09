@@ -58,26 +58,30 @@ export class Entry {
 		return true;
 	}
 
-	changeSelected(ammount: int) {
+	private changeSelected(ammount: int) {
 		let oldSelected = this.selected || 0;
 		this.setSelected(oldSelected + ammount);
 	}
 
-	disableSelection() {
+	private disableSelection() {
 		if (this.selected === undefined) return;
-		this.menuElement.children[this.selected].classList.remove("focus");
+		this.getSelectedMenuItem().classList.remove("focus");
 		this.selected = undefined;
 	}
 
-	setSelected(index: int) {
+	private setSelected(index: int) {
 		this.disableSelection();
 		if (this.menu) {
 			this.selected = this.wrapSelectionIndex(index);
-			this.menuElement.children[this.selected].classList.add("focus");
+			this.getSelectedMenuItem().classList.add("focus");
 		}
 	}
 
-	wrapSelectionIndex(index: int) {
+	private getSelectedMenuItem() {
+		return this.menuElement.children[this.selected].children[0];
+	}
+
+	private wrapSelectionIndex(index: int) {
 		return (index + this.menu.length) % this.menu.length;
 	}
 }

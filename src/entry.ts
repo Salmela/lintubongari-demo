@@ -71,8 +71,10 @@ export class Entry {
 
 	setSelected(index: int) {
 		this.disableSelection();
-		this.selected = this.wrapSelectionIndex(index);
-		this.menuElement.children[this.selected].classList.add("focus");
+		if (this.menu) {
+			this.selected = this.wrapSelectionIndex(index);
+			this.menuElement.children[this.selected].classList.add("focus");
+		}
 	}
 
 	wrapSelectionIndex(index: int) {

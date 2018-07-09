@@ -1,10 +1,21 @@
 export class ObservationFilterValueConverter {
 	toView(array: Observation[], query: string) {
-		return array.filter(observation => this.filter(observation, query));
+		let normalizedQuery = this.normalize(query);
+		return array.filter(observation => this.filter(observation, normalizedQuery));
 	}
 
-	filter(observation: Observation, query: string) {
-		return observation.bird.indexOf(query) !== -1 ||
-			observation.where.indexOf(query) !== -1;
+	private filter(observation: Observation, query: string) {
+		let bird = this.normalize(observation.bird);
+		let where = this.normalize(observation.where);
+
+		return this.contains(bird, query) || this.contains(where, query);
+	}
+
+	private contains(str: string, subStr: string) {
+		return str.indexOf(subStr) !== -1;
+	}
+
+	private normalize(word: string) {
+		return word.toLowerCase();
 	}
 }
